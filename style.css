@@ -14,5 +14,58 @@
 
 body {
 	font-family: 'Times New Roman', Times, serif;
-
 }
+
+/* mobile grid-layout 3 columns mid one always 100% of 576/16 = 36rem */
+.grid-main {
+	display: grid;
+	grid-template-columns: 1fr min(100%, 36rem) 1fr;
+}
+
+.grid-content {
+	grid-column: 2/3;
+}
+
+/* mobile navbar */
+.navbar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.navbar ul {
+	flex-direction: column;
+	align-items: center;
+}
+
+.navbar a {
+font-size: 0.8rem;
+font-size: 0.8rem;
+font-weight: 700;
+padding: 0.4rem;
+text-decoration: none;
+text-transform: uppercase;
+color: var(--black);
+}
+
+.navbar ul {
+padding: 0.4rem;
+list-style: none;
+display: flex;
+gap: 1.2rem;
+}
+
+.navbar a:hover {
+cursor: pointer;
+background-color: var(--black);
+color: var(--grey-lt);
+border-radius: 8px;
+}
+
+.active {
+border-bottom: 2px solid var(--black);
+}
+
+/* desktop navbar */
+
+/* desktop grid-layout */

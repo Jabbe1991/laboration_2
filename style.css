@@ -30,12 +30,22 @@ h1 {
 	font-size: 3rem; /* 48/16px */
 }
 
+h3 {
+	background-color: var(--red);
+	color: var(--white);
+	border: 2px solid var(--black);
+}
+
 p {
 	font-size: 1rem;
 }
 
+.info-p {
+	border: 2px solid var(--black);
+}
+
 /* mobile grid-layout */
-.grid-main {
+#hero-section {
 	display: grid;
 	grid-template-areas: "hero-text hero-text"
 											 "hero-img hero-img";
@@ -45,7 +55,7 @@ p {
 
 .navbar {
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
 }
 
@@ -114,6 +124,50 @@ button:hover {
 	grid-area: hero-img;
 	width: 320px;
 	height: 480px;
+}
+
+#between-section {
+	display: grid;
+	grid-template-areas: "public-img public-img"
+											 "audience-img audience-img";
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 5px;
+}
+
+.public-img {
+	grid-area: public-img;
+	width: 360px;
+	height: 240px;
+}
+
+.audience-img {
+	grid-area: audience-img;
+	width: 320px;
+	height: 240px;
+}
+
+#info-section {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: repeat(1, auto);
+	gap: 5px;
+}
+
+.bands {
+
+}
+
+.prices {
+
+}
+
+.store {
+
+}
+
+.faq {
+
 }
 
 /* medium */

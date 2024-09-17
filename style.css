@@ -5,13 +5,11 @@
 	--white: #FFFCFA;
 	--red: #C92424;
 }
-
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
 /* mobile */
 body {
 	font-family: 'Times New Roman', Times, serif;
@@ -20,43 +18,37 @@ body {
 	padding: 24px 0;
 	min-height: 100vh
 }
-
 h1, h2, h3 {
 	text-transform: uppercase;
 	font-weight: 900;
 }
-
 h1 {
+	padding-bottom: 24px;
 	font-size: 3rem; /* 48/16px */
 }
-
 h3 {
 	background-color: var(--grey);
 	color: var(--black);
 	border: 2px solid var(--black);
 }
-
 p {
+	padding-bottom: 16px;
 	font-size: 1rem;
 }
-
 /* header nav bar */
 .navbar {
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
-
 .img-logo {
 	width: 80px;
 	height: 80px;
 }
-
 .navbar ul {
 	flex-direction: column;
 	align-items: center;
 }
-
 .navbar a {
 font-size: 1rem;
 font-weight: 700;
@@ -65,52 +57,44 @@ text-decoration: none;
 text-transform: uppercase;
 color: var(--black);
 }
-
 .navbar ul {
 padding: 0.4rem;
 list-style: none;
 display: flex;
 gap: 1.2rem;
 }
-
 .navbar a:hover {
 cursor: pointer;
 background-color: var(--black);
 color: var(--grey-lt);
 border-radius: 8px;
 }
-
 .active {
 border-bottom: 2px solid var(--black);
 }
-
 /* hero section grid-layout */
-.hero-container {
+#hero-section {
 	display: grid;
 	grid-template-columns: 4px repeat(3, calc((100% - 48px - 20px * 2) / 3)) 4px; /* 4px sidor + 20px gap, blir jämna sidor av resterande värde. calc 3 jämna kolumner från 100% värdet */
 	gap: 20px;
 }
-
 .hero-text {
 	grid-column: 2 / 5;
 }
-
 .hero-img {
 	grid-column: 2 / -1;
+	padding-bottom: 24px;
 	width: 320px;
 	height: 480px;
 	border-radius: 8px;
 }
-
-/* knappen pre-order */
+/* btn pre-order */
 button {
 	font-family: inherit;
 }
-
 button:hover {
 	cursor: pointer;
 }
-
 .preorder-btn {
 	padding: 16px 26px;
 	background-color: var(--red);
@@ -122,123 +106,102 @@ button:hover {
 	border: 0;
 	border-radius: 8px;
 }
-
-/* mitten */
-#between-section {
+/* filler-section */
+#filler-section {
 	display: grid;
-	grid-template-columns: 1fr repeat(3, calc((100% - 48px) / 3)) 1fr;
+	grid-template-columns: 4px repeat(3, calc((100% - 48px - 20px * 2) / 3)) 4px;
+	gap: 20px;
 }
-
 .public-img {
-	grid-column: 2 / -4;
-	width: 180px;
+	grid-column: 2 / 3;
+	width: 220px;
 	height: 200px;
+	border-radius: 8px;
 }
-
 .audience-img {
-	grid-column: -3 / -1;
-	width: 160px;
+	grid-column: 3 / -1;
+	width: 220px;
 	height: 200px;
+	border-radius: 8px;
 }
-/* info section grid layout */
+/* info section */
 #info-section {
 	display: grid;
-	grid-template-columns: 1fr repeat(3, calc((100% - 48px) / 3)) 1fr;
 }
-
-.info-p {
+.info-text {
 	border: 2px solid var(--black);
 }
-
 /* tablet */
-@media (width >= 800px) {
+@media (width > 800px) {
 	body {
 		padding: 40px 0;
 	}
-
 	h1 {
 		font-size: 3.5rem;
 	}
-
 	p {
 		font-size: 1.125rem;
 	}
-
 	.navbar {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		}
-
-		.navbar ul {
-			flex-direction: row;
-			align-items: center;
-		}
-
-		.navbar a {
-			font-size: 1.125rem;
-			font-weight: 900;
-		}
-
-		/* hero section grid */
-		.hero-container {
-			display: grid;
-			grid-template-columns: 10px repeat(6, calc((100% - 80px - 30px * 5) / 6)) 10px; /* 10px sidor + 30px gap, blir jämna sidor av resterande värde. calc 6 jämna kolumner från 100% värdet */
-			gap: 30px;
-		}
-
-		.hero-text {
-			grid-column: 2 / 5;
-		}
-
-		.hero-img {
-			grid-column: 5 / -1;
-			width: 320px;
-			height: 480px;
-			border-radius: 8px;
-		}
+	.navbar ul {
+		flex-direction: row;
+		align-items: center;
+	}
+	.navbar a {
+		font-size: 1.125rem;
+		font-weight: 900;
+	}
+	/* hero section grid */
+	#hero-section {
+		display: grid;
+		grid-template-columns: 10px repeat(6, calc((100% - 80px - 30px * 5) / 6)) 10px; /* 10px sidor + 30px gap, blir jämna sidor av resterande värde. calc 6 jämna kolumner från 100% värdet */
+		gap: 30px;
+	}
+	.hero-text {
+		grid-column: 2 / 5;
+	}
+	.hero-img {
+		grid-column: 5 / -2;
+	}
 }
-
 /* desktop */
 @media (width >= 1200px) {
 	body {
 		padding: 55px 0;
 	}
-
 	h1 {
 		font-size: 3.5rem; /* 56/16px */
 	}
-
 	p {
 		font-size: 1.125rem; /* 18/16px */
 	}
-
 	.navbar {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		}
-
-		.navbar ul {
-			flex-direction: row;
-			align-items: center;
-		}
-
-		.navbar a {
-			font-size: 1.5rem;
-			font-weight: 900;
-		}
-
-		.hero-container {
-			display: grid;
-			grid-template-columns: 1fr repeat(12, calc((69.375rem - 30px * 11) / 12)) 1fr; /* 1fr sidor för flexibal + 30px gap, blir mera flexibla/jämna sidor av resterande värde. calc 12 jämna kolumner men i stället i från 100% tar jag värdet från 1110px/16px = 69.375rem */
-			gap: 30px;
-		}
-		.hero-text {
+	}
+	.navbar ul {
+		flex-direction: row;
+		align-items: center;
+	}
+	.navbar a {
+		font-size: 1.5rem;
+		font-weight: 900;
+	}
+	/* hero section grid */
+	#hero-section {
+		display: grid;
+		grid-template-columns: 1fr repeat(12, calc((69.375rem - 30px * 11) / 12)) 1fr; /* 1fr sidor för flexibal + 30px gap, blir mera flexibla/jämna sidor av resterande värde. calc 12 jämna kolumner men i stället i från 100% tar jag värdet från 1110px/16px = 69.375rem */
+		gap: 30px;
+	}
+	.hero-text {
 			grid-column: 2 / 8;
-		}
-
-		.hero-img {
-			grid-column: 10 / -2;
-		}
+	}
+	.hero-img {
+			grid-column: 11 / -2;
+	}
 }

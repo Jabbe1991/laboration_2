@@ -87,11 +87,12 @@ border-bottom: 2px solid var(--black);
 /* hero section grid-layout */
 .hero-container {
 	display: grid;
-	grid-template-columns: 1fr repeat(3, calc((100% - 48px) / 3)) 1fr;
+	grid-template-columns: 4px repeat(3, calc((100% - 48px - 20px * 2) / 3)) 4px; /* 4px sidor + 20px gap, blir jämna sidor av resterande värde. calc 3 jämna kolumner från 100% värdet */
+	gap: 20px;
 }
 
 .hero-text {
-	grid-column: 2 / 8;
+	grid-column: 2 / 5;
 }
 
 .hero-img {
@@ -149,8 +150,8 @@ button:hover {
 	border: 2px solid var(--black);
 }
 
-/* medium */
-@media (width > 800px) {
+/* tablet */
+@media (width >= 800px) {
 	body {
 		padding: 40px 0;
 	}
@@ -160,7 +161,7 @@ button:hover {
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: 1.125rem;
 	}
 
 	.navbar {
@@ -179,10 +180,27 @@ button:hover {
 			font-weight: 900;
 		}
 
+		/* hero section grid */
+		.hero-container {
+			display: grid;
+			grid-template-columns: 10px repeat(6, calc((100% - 80px - 30px * 5) / 6)) 10px; /* 10px sidor + 30px gap, blir jämna sidor av resterande värde. calc 6 jämna kolumner från 100% värdet */
+			gap: 30px;
+		}
+
+		.hero-text {
+			grid-column: 2 / 5;
+		}
+
+		.hero-img {
+			grid-column: 5 / -1;
+			width: 320px;
+			height: 480px;
+			border-radius: 8px;
+		}
 }
 
-/* large */
-@media (width > 1200px) {
+/* desktop */
+@media (width >= 1200px) {
 	body {
 		padding: 55px 0;
 	}
@@ -209,5 +227,18 @@ button:hover {
 		.navbar a {
 			font-size: 1.5rem;
 			font-weight: 900;
+		}
+
+		.hero-container {
+			display: grid;
+			grid-template-columns: 1fr repeat(12, calc((69.375rem - 30px * 11) / 12)) 1fr; /* 1fr sidor för flexibal + 30px gap, blir mera flexibla/jämna sidor av resterande värde. calc 12 jämna kolumner men i stället i från 100% tar jag värdet från 1110px/16px = 69.375rem */
+			gap: 30px;
+		}
+		.hero-text {
+			grid-column: 2 / 8;
+		}
+
+		.hero-img {
+			grid-column: 10 / -2;
 		}
 }
